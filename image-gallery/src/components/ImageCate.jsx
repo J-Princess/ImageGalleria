@@ -85,14 +85,12 @@ const ImageCate = () => {
         img.src = image.src;
         img.onload = resolve;
         img.onerror = () => {
-          // Handle error by resolving the promise
           resolve();
         };
       });
     });
   
     Promise.all(imagePromises).then(() => {
-      // All images have loaded (or errored)
       setImagesLoading(false);
     });
   }, [gridImages]);
@@ -106,14 +104,12 @@ const ImageCate = () => {
           strategy={rectSortingStrategy}
         >
           {imagesLoading ? (
-            // Conditionally render the spinner
             <div className="spinner-container">
               <div className="spinner-border m-5" role="status">
                 <span className="visually-hidden">Loading...</span>
               </div>
             </div>
           ) : (
-            // Render images when imagesLoading is false
             gridImages.map((image) => (
               image.category === category && (
                 <Images key={image.id} src={image.src} id={image.id} />
