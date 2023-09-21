@@ -9,7 +9,7 @@ const LoginPage = (e) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null); // State for handling errors
+  const [error, setError] = useState(null); 
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async () => {
@@ -21,11 +21,10 @@ const LoginPage = (e) => {
       );
       const user = userCredential.user;
       console.log("User logged in:", user.email);
-      // You can redirect the user or perform other actions after successful login
       navigate("/dashboard");
     } catch (err) {
       console.error("Error signing in:", err.message);
-      setError(err.message); // Set the error message in state
+      setError(err.message); 
     }
   };
   const togglePasswordVisibility = () => {
