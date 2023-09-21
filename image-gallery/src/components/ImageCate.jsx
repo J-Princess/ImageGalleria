@@ -1,10 +1,10 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DndContext, closestCenter, MouseSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { arrayMove, SortableContext, rectSortingStrategy } from '@dnd-kit/sortable';
-import Image from './Image';
+import Images from './Image';
 import Category from './Category';
-import Images from "./images/qingbao-meng-01_igFr7hd4-unsplash.jpg";
+import Images1 from "./images/qingbao-meng-01_igFr7hd4-unsplash.jpg";
 import Image1 from "./images/john-towner-CakC6u4d95g-unsplash.jpg";
 import Image2 from "./images/mark-harpur-K2s_YE031CA-unsplash.jpg";
 import Image3 from "./images/jonatan-pie-g6tqHx0ME1o-unsplash.jpg";
@@ -27,7 +27,7 @@ import Image6 from "./images/pexels-anthony-📷📹🙂-133459.jpg";
 const categories = ['Nature', 'Food', 'Animals']; 
 const initialImages = [
 
-  { id: '1', src: Images, alt: "Image 1", category: 'Nature' },
+  { id: '1', src: Images1, alt: "Image 1", category: 'Nature' },
   { id: '3', src: Image1, alt: "Image 2", category: 'Nature' },
   { id: '2', src: Animal, alt: "Image 1", category: 'Nature' },
   { id: '4', src: Image2, alt: "Image 1", category: 'Nature' },
@@ -60,6 +60,7 @@ const ImageCate = () => {
   );
 
   const [gridImages, setGridImages] = useState(initialImages);
+  const [imagesLoading, setImagesLoading] = useState(true);
 
   const handleDragEnd = ({ active, over }) => {
     if (active && over && active.id !== over.id) {
@@ -77,37 +78,58 @@ const ImageCate = () => {
     }
   };
   
+  useEffect(() => {
+    const imagePromises = gridImages.map((image) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = image.src;
+        img.onload = resolve;
+        img.onerror = () => {
+          // Handle error by resolving the promise
+          resolve();
+        };
+      });
+    });
   
+    Promise.all(imagePromises).then(() => {
+      // All images have loaded (or errored)
+      setImagesLoading(false);
+    });
+  }, [gridImages]);
 
   return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCenter}
-      onDragEnd={handleDragEnd}
-     
-    >
-      {categories.map((category, index) => (
-        <Category key={index} title={category} >
-          <SortableContext
-          
-            items={gridImages.filter((image) => image.category === category)}
-            strategy={rectSortingStrategy}
-          >
-            {gridImages.map((image) => (
+    <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+    {categories.map((category, index) => (
+      <Category key={index} title={category}>
+        <SortableContext
+          items={gridImages.filter((image) => image.category === category)}
+          strategy={rectSortingStrategy}
+        >
+          {imagesLoading ? (
+            // Conditionally render the spinner
+            <div className="spinner-container">
+              <div className="spinner-border m-5" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          ) : (
+            // Render images when imagesLoading is false
+            gridImages.map((image) => (
               image.category === category && (
-                <Image
-                  key={image.id}
-                  src={image.src}
-                  id={image.id}
-                 
-                />
+                <Images key={image.id} src={image.src} id={image.id} />
               )
-            ))}
-          </SortableContext>
-        </Category>
-      ))}
-    </DndContext>
+            ))
+          )}
+        </SortableContext>
+      </Category>
+    ))}
+  </DndContext>
   );
 };
 
 export default ImageCate;
+
+
+
+
+

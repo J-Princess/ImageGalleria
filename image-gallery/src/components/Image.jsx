@@ -4,7 +4,7 @@
 import React from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 
-const Image = ({ src, id }) => {
+const Images = ({ src, id }) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useSortable({ id });
 
   const imageStyle = {
@@ -32,5 +32,5 @@ const Image = ({ src, id }) => {
   );
 };
 
-export default Image;
+export default Images;
 
