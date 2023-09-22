@@ -103,7 +103,7 @@ const MainBody = () => {
               <input
                 className="form-control me-2 text-primary one"
                 type="search"
-                placeholder="Search by Category..."
+                placeholder="Search by tag..."
                 value={searchQuery}
                 onChange={handleSearchInputChange}
                 style={{ background: "transparent" }}
