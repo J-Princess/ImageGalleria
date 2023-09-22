@@ -21,6 +21,7 @@ const LoginPage = (e) => {
       );
       const user = userCredential.user;
       console.log("User logged in:", user.email);
+      alert("Login Successful. Hold On")
       navigate("/dashboard");
     } catch (err) {
       console.error("Error signing in:", err.message);

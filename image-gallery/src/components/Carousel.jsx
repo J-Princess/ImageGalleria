@@ -15,9 +15,9 @@ const Carousel = () => {
           data-bs-ride="true"
         >
           <div className="carousel-inner" style={{ height: "600px"}}>
-            <div className="carousel-item active" data-bs-interval="1000">
+            <div className="carousel-item active hero" data-bs-interval="1000">
               <img src={SlidImg} className="d-block w-100" alt="... " style={{ opacity: '0.5'}}/>
-              <div className="carousel-caption d-none d-md-block" style={{ height: "600px", color: "black", fontSize: "40px"}}>
+              <div className=" carousel-caption d-none d-md-block" style={{ height: "550px", color: "black", fontSize: "40px"}}>
                 <h1>Galleria</h1>
                 <p>
                   Welcome to Galleria. A friendly image gallery that allows you to re-order and align images.
@@ -26,26 +26,26 @@ const Carousel = () => {
             </div>
             <div className="carousel-item" data-bs-interval="2000" >
               <img src={SliderImg} className="d-block w-100" alt="... " style={{ opacity: '0.5'}}/>
-              <div className="carousel-caption d-none d-md-block " style={{ height: "600px", color: "black", fontSize: "40px" }}>
+              <div className="hero carousel-caption d-none d-md-block" style={{ height: "550px", color: "black", fontSize: "40px" }}>
                 <h5>How to Align Images</h5>
                 <p>
                   Procede to the Signup Page to enable you get access to move images. 
                 </p>
               </div>
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" data-bs-interval="2000">
               <img src={Slid2Img} className="d-block w-100" alt="... " style={{ opacity: '0.5'}}/>
-              <div className="carousel-caption d-none d-md-block" style={{ height: "600px", color: "black", fontSize: "40px"}}>
+              <div className="hero carousel-caption d-none d-md-block" style={{ height: "550px", color: "black", fontSize: "40px"}}>
                 <h5>Voila!</h5>
                 <p>
                 Simply click on the image you want to move and move it to where you would like it to be.
                 </p>
               </div>
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" data-bs-interval="1000">
               <img src={Slid3Img} className="d-block w-100" alt="... " style={{ opacity: '0.5'}}/>
-              <div className="carousel-caption d-none d-md-block" style={{ height: "600px", color: "black", fontSize: "40px"}}>
-                <h5>Third slide label</h5>
+              <div className="hero carousel-caption d-none d-md-block " style={{ height: "550px", color: "black", fontSize: "40px"}}>
+                <h5>That's All'</h5>
                 <p>
                 And just like that, you are done. Yay.
                 </p>
