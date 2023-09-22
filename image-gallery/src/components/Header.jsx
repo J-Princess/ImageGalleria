@@ -38,7 +38,7 @@ const Header = () => {
             <ul className="navbar-nav mb-lg-0">
               <li className="nav-item ">
                 <Link to="login"
-                  className="nav-link active "
+                  className="nav-link active bg-primary px-5 btn"
                   aria-current="page"
               
                 >

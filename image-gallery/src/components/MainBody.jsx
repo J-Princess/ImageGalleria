@@ -147,7 +147,7 @@ const MainBody = () => {
 
             <ul className="navbar-nav mb-lg-0">
               <li className="nav-item ">
-                <Link to="/" className="nav-link active " aria-current="page">
+                <Link to="/" className="nav-link active bg-primary px-5 btn" aria-current="page">
                   Sign Out
                 </Link>
               </li>
