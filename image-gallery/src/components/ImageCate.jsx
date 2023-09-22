@@ -21,7 +21,7 @@ import Animal2 from "./images/gwen-weustink-I3C1sSXj1i8-unsplash.jpg";
 import Animal3 from "./images/boris-smokrovic-lyvCvA8sKGc-unsplash.jpg";
 import Food4 from "./images/chad-montano-MqT0asuoIcU-unsplash.jpg";
 import Image4 from "./images/pexels-stein-egil-liland-3408744.jpg";
-import Image5 from "./images/pexels-dorota-semla-8969237.jpg";
+// import Image5 from "./images/pexels-dorota-semla-8969237.jpg";
 import Image6 from "./images/pexels-anthony-📷📹🙂-133459.jpg";
 
 const categories = ['Nature', 'Food', 'Animals']; 
@@ -32,7 +32,7 @@ const initialImages = [
   { id: '2', src: Animal, alt: "Image 1", category: 'Nature' },
   { id: '4', src: Image2, alt: "Image 1", category: 'Nature' },
   { id: '5', src: Food4, alt: "Image 1", category: 'Food' },
-  { id: '8', src: Image5, alt: "Image 2", category: 'Nature' },
+  // { id: '8', src: Image5, alt: "Image 2", category: 'Nature' },
   { id: '6', src: Image6, alt: "Image 1", category: 'Nature' },
   { id: '7', src: Image7, alt: "Image 2", category: 'Animals' },
   { id: '9', src: Food, alt: "Image 1", category: 'Food' },
