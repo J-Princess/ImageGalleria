@@ -12,9 +12,29 @@ const LoginPage = (e) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null); 
   const [showPassword, setShowPassword] = useState(false);
+  
+ const isEmailValid = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
+  };
 
+  // Regular expression for password validation
+  const isPasswordValid = (password) => {
+    const passwordRegex = /^1Password$/;
+    return passwordRegex.test(password);
+  };
   const handleLogin = async () => {
     try {
+       if (!isEmailValid(email)) {
+        setError("Invalid email format");
+        return;
+      }
+
+      if (!isPasswordValid(password)) {
+        setError("Invalid password format");
+        return;
+      }
+
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
