@@ -40,7 +40,7 @@ const initialImages = [
   { id: '11', src: Animal3, alt: "Image 1", category: 'Animals' },
   { id: '12', src: Food2, alt: "Image 1", category: 'Food' },
   { id: '15', src: Food3, alt: "Image 2", category: 'Food' },
-  { id: '16', src: Image4, alt: "Image 1", category: 'Food' },
+  { id: '16', src: Image4, alt: "Image 1", category: 'Nature' },
   { id: '13', src: Food5, alt: "Image 2", category: 'Food' },
   { id: '17', src: Food6, alt: "Image 1", category: 'Food' },
   { id: '14', src: Animal1, alt: "Image 2", category: 'Animals' },
