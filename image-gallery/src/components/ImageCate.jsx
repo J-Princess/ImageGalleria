@@ -60,7 +60,7 @@ const ImageCate = () => {
   );
 
   const [gridImages, setGridImages] = useState(initialImages);
-  const [imagesLoading, setImagesLoading] = useState(true);
+  const [imagesLoading, setImagesLoading] = useState(false);
 
   const handleDragEnd = ({ active, over }) => {
     if (active && over && active.id !== over.id) {
