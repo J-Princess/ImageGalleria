@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./config/index";
+import Header from "./Header";
 
 
 const LoginPage = (e) => {
@@ -44,7 +45,7 @@ const LoginPage = (e) => {
       <div className="page-banner2">
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-md-6 mt-5 pt-5">
-            <h1 className="text-center text-secondary my-5">Sign In</h1>
+            <h1 className="text-center text-secondary my-5">Sign In to enable you see and use the gallery</h1>
 
             <div className="input-group flex-nowrap mt-3">
               <span
