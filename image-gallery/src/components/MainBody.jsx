@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Images from "./Image";
-import Category from "./Category";
 import Images1 from "./images/qingbao-meng-01_igFr7hd4-unsplash.jpg";
 import Image1 from "./images/john-towner-CakC6u4d95g-unsplash.jpg";
 import Image2 from "./images/mark-harpur-K2s_YE031CA-unsplash.jpg";
@@ -54,7 +53,7 @@ const MainBody = () => {
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
 
-    // Filter images based on the selected category
+
     const filtered = initialImages.filter(
       (image) => category === "" || image.category === category
     );
@@ -67,7 +66,7 @@ const MainBody = () => {
     setSearchQuery(query);
     setSearchPerformed(false);
 
-    // Filter images based on the search query and category
+
     const filtered = initialImages.filter(
       (image) =>
         (selectedCategory === "" || image.category === selectedCategory) &&
@@ -136,7 +135,7 @@ const MainBody = () => {
                     {filteredImages.map((image) => (
                       <li key={image.id}>
                         <a className="dropdown-item" href="#">
-                          {/* Render each image component here */}
+                        
                           <Images src={image.src} alt={image.alt} />
                         </a>
                       </li>
