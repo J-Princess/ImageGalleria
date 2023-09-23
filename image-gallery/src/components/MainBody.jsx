@@ -106,7 +106,7 @@ const MainBody = () => {
                 placeholder="Search by tag..."
                 value={searchQuery}
                 onChange={handleSearchInputChange}
-                style={{ background: "transparent" }}
+                style={{ background: "transparent", color: "#000000", fontSize: "20px" }}
               />
               <button
                 className="btn btn-outline-success mr-3"
